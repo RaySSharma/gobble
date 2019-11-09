@@ -9,7 +9,6 @@ install:
 - pip install pytest-cov
 - pip install .
 script: pytest --cov=gobble --cov-report=xml -v
-after_success: bash <(curl -s https://codecov.io/bash)
 deploy:
   - provider: pypi
     twine_version: 2.0.0
@@ -20,6 +19,7 @@ deploy:
     on:
       branch: master
       condition: $TRAVIS_PYTHON_VERSION = "3.6"
+    script: bash <(curl -s https://codecov.io/bash)
 
   - provider: pypi
     user: __token__
@@ -30,3 +30,4 @@ deploy:
     on:
       branch: develop
       condition: $TRAVIS_PYTHON_VERSION = "3.6"
+    script: bash <(curl -s https://codecov.io/bash)
