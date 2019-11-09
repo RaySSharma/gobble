@@ -16,7 +16,7 @@ setup(
     long_description_content_type='text/markdown',
     install_requires=['pillow==5.2.0'],
     entry_points={
-        'console_scripts': ['gobble=gobble:gobble'],
+        'console_scripts': ['gobble=gobble:main'],
     },
     classifiers=[
         'Development Status :: 4 - Beta',

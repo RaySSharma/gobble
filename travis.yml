@@ -4,18 +4,13 @@ python:
   - "3.4"
   - "3.5"
   - "3.6"      # current default Python on Travis CI
-# command to install dependencies
 install:
-  - pip install -r requirements.txt
   - pip install pipenv
   - pipenv install --dev --skip-lock
-# command to run tests
 script:
   pipenv run pytest --cov=gobble --cov-report=xml -v
-
 after_success:
   pipenv run codecov
-
 deploy:
   provider: pypi
   user: $TEST_PYPI_USER
