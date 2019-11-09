@@ -1,14 +1,11 @@
 from setuptools import setup
-import os
 
 VERSION = '0.1.3'
 
-datadir = os.path.join('gobble', 'assets')
-datafiles = [(d, [os.path.join(d, f) for f in files])
-             for d, folders, files in os.walk(datadir)]
-
 setup(
-    name='gobbler', version=VERSION, packages=['gobble'], data_files=datafiles,
+    name='gobbler', version=VERSION, packages=['gobble'],
+    include_package_data=True,
+    package_data={'': ['*.png']},
     url='https://github.com/rayssharma/gobble',
     download_url='https://github.com/rayssharma/gobble/tarball/{}'.format(
         VERSION), license='MIT', author='Ray Sharma',
