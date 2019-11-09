@@ -2,7 +2,6 @@
 
 # __author__ = "Ray Sharma"
 # __copyright__ = "Copyright 2019, Ray Sharma"
-# __credits__ = ["Ray Sharma"]
 # __maintainer__ = "Ray Sharma"
 # __email__ = "ramon.sharma1@gmail.com"
 
