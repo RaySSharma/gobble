@@ -6,9 +6,9 @@ python:
 - '3.8'
 install:
 - pip install -r requirements.txt
-- pip install coverage
+- pip install pytest-cov
 - pip install .
-script: coverage run pytest -v
+script: pytest --cov=gobble --cov-report=xml -v
 after_success: bash <(curl -s https://codecov.io/bash)
 deploy:
   - provider: pypi
