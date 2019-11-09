@@ -22,7 +22,7 @@ def gobble(image_number=None):
         image_number (int, optional): Image number to show, defaults to None.
     """
     image_name = None
-    assets_dir = path.join(path.dirname(__file__), '..', 'assets')
+    assets_dir = path.join(path.dirname(__file__), 'assets')
     all_images = glob(path.join(assets_dir, '*.png'))
     if image_number is None:
         image_name = choice(all_images)

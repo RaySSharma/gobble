@@ -3,7 +3,7 @@ import os
 
 VERSION = '0.1.2'
 
-datadir = os.path.join('assets')
+datadir = os.path.join('gobble', 'assets')
 datafiles = [(d, [os.path.join(d, f) for f in files])
              for d, folders, files in os.walk(datadir)]
 
