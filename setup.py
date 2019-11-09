@@ -15,6 +15,9 @@ setup(
     long_description=open('README.md').read(),
     long_description_content_type='text/markdown',
     install_requires=['pillow==5.2.0'],
+    entry_points={
+        'console_scripts': ['gobble=gobble:gobble'],
+    },
     classifiers=[
         'Development Status :: 4 - Beta',
         'License :: OSI Approved :: MIT License',

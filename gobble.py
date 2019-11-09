@@ -1,7 +1,6 @@
 from PIL import Image
 from os import path
 from glob import glob
-from sys import exit
 from random import choice
 
 from . import assets
@@ -22,12 +21,11 @@ def gobble(image_number=None):
         image_name = choice(all_images)
     else:
         image_name = None
-        try:
-            image_name = all_images[image_number]
-        except (TypeError, IndexError) as err:
-            print(err)
-            exit()
 
-    im_file = path.join(assets_dir, image_name)
-    Image.open(im_file).show()
-    print('gobble')
+    try:
+        image_name = all_images[image_number - 1]
+        im_file = path.join(assets_dir, image_name)
+        Image.open(im_file).show()
+        print('gobble')
+    except (TypeError, IndexError) as err:
+        print(err)
