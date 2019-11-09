@@ -1,20 +1,20 @@
 language: python
 python:
-  - "3.5"
-  - "3.6"      # current default Python on Travis CI
-  - "3.7"
-  - "3.8"
+- '3.5'
+- '3.6'
+- '3.7'
+- '3.8'
 install:
-  - pip install -r requirements.txt
-  - pip install .
-script:
-  pytest -v
+- pip install -r requirements.txt
+- pip install .
+script: pytest -v
 deploy:
   provider: pypi
-  user: $TEST_PYPI_USER
-  password: $TEST_PYPI_PASS
+  user: "__token__"
+  password:
+    secure: I6mEV6Da6p6N5SMjMrhPHpD/FmkkYuHWNduXRbozn+kJOx2caemKLgPPnfBXk/1R+Re3QYu2ZDbpIHtqgjx30BDCyLoCwTmGQuTukUjG9urzvpLVZ5kDPmmpgaNj4volDGiJFRX7/gR4Uvs6lJpn0qLYHLPx0DKQsIiJuboVohb/OXS3fabJFqTiBBNw5TNKrijZOWXqJDByfQd6YDH1uSquIAGNNuHh7isrX1+Jj6J3w+wkfRwLsXFS+yV8qti7IRDCEVm8YfNFbNu916HjsX8WljIvzkAfnCH+jmVsekfrIMMd6J3QJayPuNnkXltTMazcah/aVHdeQkbUAMfIippnhvfBSCu892p71FNNYxNiL8veE9dRLj/+S98+8km6ge0w+zGV9bg0zmKWEPEEmfTv3ttGBz+vY5dNbZFp0LorfGxPOOfoTc2+bvue2TolWZ+cEjJvSm+BK4nZMbYTkT9+TdXQGNZu0u8I4buPQdfQW9ZnG/enjm1cLfC6mlldRzp6a32hQmcKjNaFYdzBmy7cq5kuyV6Kt0TEe96BRPyx72coKFARSnY8sw20ZUIUe9OA5ilCar1hUfeyQ2eibjBwnurRVAP4byG9PNMc4EwezfKtuu8Zf10LOwgyVXtSXWj16vViQPr0uCWmMUzFqXSLfDrKMJ6JiA1hF+XpKMo=
   server: https://test.pypi.org/
-  distributions: "sdist bdist_wheel"
+  distributions: sdist bdist_wheel
   on:
     branch: master
     condition: $TRAVIS_PYTHON_VERSION = "3.6"
