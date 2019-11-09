@@ -34,4 +34,4 @@ optional arguments:
 
 ## License
 
-MIT © [Ray Sharma](https://rayssharma.com)
+MIT © [Ray Sharma](rayssharma.com)
