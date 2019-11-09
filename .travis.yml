@@ -2,6 +2,8 @@ language: python
 python:
   - "3.5"
   - "3.6"      # current default Python on Travis CI
+  - "3.7"
+  - "3.8"
 install:
   - pip install -r requirements.txt
   - pip install .
@@ -11,7 +13,7 @@ deploy:
   provider: pypi
   user: $TEST_PYPI_USER
   password: $TEST_PYPI_PASS
-  server: https://test.pypi.org/legacy/
+  server: https://test.pypi.org/
   distributions: "sdist bdist_wheel"
   on:
     branch: master
