@@ -6,7 +6,8 @@ A turkey-themed image catalog featuring over 99 hand-picked images to boost the 
 ## Usage
 
 ```python
-import gobble
+
+from gobble import gobble
 
 gobble.gobble()
 gobble.gobble(99)

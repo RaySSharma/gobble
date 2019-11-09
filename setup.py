@@ -14,7 +14,7 @@ setup(
     description='Turkey-themed image catalog to boost the holiday mood.',
     long_description=open('README.md').read(),
     long_description_content_type='text/markdown',
-    install_requires=['pillow==6.2.0'],
+    install_requires=['pillow>=6.2.1', 'pytest'],
     entry_points={
         'console_scripts': ['gobble=gobble:main'],
     },
@@ -24,8 +24,6 @@ setup(
         'Topic :: Office/Business :: Financial',
         'Topic :: Scientific/Engineering :: Mathematics',
         'Topic :: Software Development :: Libraries :: Python Modules',
-        'Programming Language :: Python :: 2',
-        'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',

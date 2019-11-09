@@ -12,7 +12,7 @@ from glob import glob
 from random import choice
 from sys import exit
 
-from . import assets
+from gobble import assets
 
 
 def gobble(image_number=None):

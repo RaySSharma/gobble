@@ -1,4 +1,4 @@
-from gobble import gobble
+from gobble.gobble import gobble
 import pytest
 
 def test_gobbler_good_input():
