@@ -14,7 +14,7 @@ setup(
     description='Turkey-themed image catalog to boost the holiday mood.',
     long_description=open('README.md').read(),
     long_description_content_type='text/markdown',
-    install_requires=['pillow==6.2.0'],
+    install_requires=['pillow==6.2.1'],
     entry_points={
         'console_scripts': ['gobble=gobble:main'],
     },
