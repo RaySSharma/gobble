@@ -6,8 +6,10 @@ python:
 - '3.8'
 install:
 - pip install -r requirements.txt
+- pip install coverage
 - pip install .
-script: pytest -v
+script: coverage run pytest -v
+after_success: bash <(curl -s https://codecov.io/bash)
 deploy:
   - provider: pypi
     twine_version: 2.0.0

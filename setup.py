@@ -1,7 +1,7 @@
 from setuptools import setup
 import os
 
-VERSION = '0.1.2'
+VERSION = '0.1.3'
 
 datadir = os.path.join('gobble', 'assets')
 datafiles = [(d, [os.path.join(d, f) for f in files])
