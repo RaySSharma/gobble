@@ -9,12 +9,20 @@ install:
 - pip install .
 script: pytest -v
 deploy:
-  provider: pypi
-  twine_version: 2.0.0
-  user: __token__
-  password:
-    secure: f02hQ/LeF6K27KPAN3MNweGbvSS2diEvY2pbj95Xd3Jk/p4AdKq+RmKap1oZYSvhojq0VEpjYp7AfHJFrtR2/k+/MRhaRT6kqbChETNH9Y14CgcxsHB/KemOANd/IDmhyc8G5Lfz2XfFlMex2E+ipH3qsCEoUBSrFoPk35Kl+PYu6oTLaTPP2syFH7Im/X5ledFn+4WCxiekTX7uvqxxAXmVMC83cC1qbb2WxECTUpD7ssr1I5Ecxk8CsHuHvdzwK/4WnsE3oBopTQetHJ0Erq+Lsh1LU5ArkLAxeGsZ1CZishiFlxwwd35jNLB3An/0NvWJzQDq01QEOlp2Vr5S407VYv2f1FkDDJilMt4P5JpHCNY7awv8Xevfat/0xfi2Fq+dXlVPt9tH9+sIlnYr5co3aL90nKefz6mc2HwGGERANz9WCDNUq3qeIq82cn9QtpfRedInLAESVunSvSrm2qWlUtP33kfEaf0kyW64v76VCK3C3muBDmhaLq4KJZszUNN0ugNvDh1yQ1d8E/dZAcAxJt2heWExma7m0a3qoG1lhguuX24PLvYsJx0A5o3eL3oe4uPP2ektHEsetL1T+nd2L+YtNLxXi6Gz2K/N7lS3MfnXC1sfsw8LG2FYM4C8xqLHiLvN49ov2Yn46JJU8IrHoj1VF55Pcsx0+HQUiMU=
-  distributions: sdist bdist_wheel
-  on:
-    branch: master
-    condition: $TRAVIS_PYTHON_VERSION = "3.6"
+  - provider: pypi
+    twine_version: 2.0.0
+    user: __token__
+    password:
+      secure: f02hQ/LeF6K27KPAN3MNweGbvSS2diEvY2pbj95Xd3Jk/p4AdKq+RmKap1oZYSvhojq0VEpjYp7AfHJFrtR2/k+/MRhaRT6kqbChETNH9Y14CgcxsHB/KemOANd/IDmhyc8G5Lfz2XfFlMex2E+ipH3qsCEoUBSrFoPk35Kl+PYu6oTLaTPP2syFH7Im/X5ledFn+4WCxiekTX7uvqxxAXmVMC83cC1qbb2WxECTUpD7ssr1I5Ecxk8CsHuHvdzwK/4WnsE3oBopTQetHJ0Erq+Lsh1LU5ArkLAxeGsZ1CZishiFlxwwd35jNLB3An/0NvWJzQDq01QEOlp2Vr5S407VYv2f1FkDDJilMt4P5JpHCNY7awv8Xevfat/0xfi2Fq+dXlVPt9tH9+sIlnYr5co3aL90nKefz6mc2HwGGERANz9WCDNUq3qeIq82cn9QtpfRedInLAESVunSvSrm2qWlUtP33kfEaf0kyW64v76VCK3C3muBDmhaLq4KJZszUNN0ugNvDh1yQ1d8E/dZAcAxJt2heWExma7m0a3qoG1lhguuX24PLvYsJx0A5o3eL3oe4uPP2ektHEsetL1T+nd2L+YtNLxXi6Gz2K/N7lS3MfnXC1sfsw8LG2FYM4C8xqLHiLvN49ov2Yn46JJU8IrHoj1VF55Pcsx0+HQUiMU=
+    distributions: sdist bdist_wheel
+    on:
+      branch: master
+      condition: $TRAVIS_PYTHON_VERSION = "3.6"
+
+  - provider: pypi
+    user: $TEST_PYPI_USER
+    password: $TEST_PYPI_PASSWORD
+    distributions: "sdist bdist_wheel"
+    server: https://test.pypi.org/legacy/
+    on:
+      branch: develop
