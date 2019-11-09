@@ -7,6 +7,10 @@
 
 A turkey-themed image catalog featuring over 99 hand-picked images to boost the holiday mood.
 
+## Installation
+```python
+pip install gobbler
+```
 ## Usage
 
 ### Python
