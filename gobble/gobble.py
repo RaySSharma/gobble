@@ -12,7 +12,7 @@ from glob import glob
 from random import choice
 from sys import exit
 
-import pdb
+
 def gobble(image_number=None):
     """Displays a gobble image
 
