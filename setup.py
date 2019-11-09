@@ -1,11 +1,18 @@
 from setuptools import setup
+import os
+
 
 VERSION = '0.1.1'
+
+datadir = os.path.join('assets')
+datafiles = [(d, [os.path.join(d, f) for f in files])
+    for d, folders, files in os.walk(datadir)]
 
 setup(
     name='gobbler',
     version=VERSION,
-    py_modules=['gobble'],
+    packages=['gobble'],
+    data_files=datafiles,
     url='https://github.com/rayssharma/gobble',
     download_url='https://github.com/rayssharma/gobble/tarball/{}'.format(VERSION),
     license='MIT',
@@ -16,7 +23,7 @@ setup(
     long_description_content_type='text/markdown',
     install_requires=['pillow>=6.2.1', 'pytest'],
     entry_points={
-        'console_scripts': ['gobble=gobble:main'],
+        'console_scripts': ['gobble=gobble.gobble:main'],
     },
     classifiers=[
         'Development Status :: 4 - Beta',

@@ -5,12 +5,23 @@ A turkey-themed image catalog featuring over 99 hand-picked images to boost the 
 
 ## Usage
 
+### Python
 ```python
-
 from gobble import gobble
 
 gobble.gobble()
 gobble.gobble(99)
+```
+### Command line
+```
+usage: gobble [-h] [-n NUM]
+
+A turkey-themed image catalog featuring over 99 hand-picked images to boost
+the holiday mood.
+
+optional arguments:
+-h, --help         show this help message and exit
+-n NUM, --num NUM  Specify image number
 ```
 
 ## License

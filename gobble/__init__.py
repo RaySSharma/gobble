@@ -1,1 +1,1 @@
-from gobble import gobble
+from .gobble import gobble

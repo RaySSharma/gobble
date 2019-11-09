@@ -12,9 +12,7 @@ from glob import glob
 from random import choice
 from sys import exit
 
-from gobble import assets
-
-
+import pdb
 def gobble(image_number=None):
     """Displays a gobble image
 
@@ -25,7 +23,7 @@ def gobble(image_number=None):
         image_number (int, optional): Image number to show, defaults to None.
     """
     image_name = None
-    assets_dir = path.dirname(assets.__file__)
+    assets_dir = path.join(path.dirname(__file__), '..', 'assets')
     all_images = glob(path.join(assets_dir, '*.png'))
     if image_number is None:
         image_name = choice(all_images)
@@ -45,7 +43,9 @@ def main():
     import argparse
 
     parser = argparse.ArgumentParser(
-        description='A turkey-themed image catalog featuring over 99 hand-picked images to boost the holiday mood.')
+        description=
+        'A turkey-themed image catalog featuring over 99 hand-picked images to boost the holiday mood.'
+    )
     parser.add_argument('-n', '--num', dest='num', default=None, type=int,
                         help='Specify image number')
     arguments = parser.parse_args()
