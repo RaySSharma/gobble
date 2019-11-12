@@ -17,8 +17,8 @@ pip install gobbler
 ```python
 from gobble import gobble
 
-gobble.gobble()
-gobble.gobble(99)
+gobble()
+gobble(99)
 ```
 ### Command line
 ```
